@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VistaIndividualController">
+   <children>
+      <TableView fx:id="tblindividual" layoutX="6.0" layoutY="14.0" onMouseClicked="#seleccion" prefHeight="292.0" prefWidth="758.0">
+        <columns>
+            <TableColumn fx:id="colid" prefWidth="51.0" text="ID" />
+          <TableColumn fx:id="coldpi" prefWidth="99.0" text="DPI" />
+          <TableColumn fx:id="colnombre" prefWidth="122.0" text="NOMBRE" />
+            <TableColumn fx:id="conlnit" prefWidth="78.0" text="NIT" />
+            <TableColumn fx:id="coldireccion" prefWidth="79.0" text="DIRECCION" />
+            <TableColumn fx:id="coltelefono" prefWidth="87.0" text="TELEFONO" />
+            <TableColumn fx:id="colcontacto" prefWidth="100.0" text="Contacto" />
+            <TableColumn fx:id="coldesc" prefWidth="60.0" text="Desc" />
+            <TableColumn fx:id="colestado" prefWidth="74.0" text="ESTADO" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtnombre" layoutX="200.0" layoutY="340.0" />
+      <TextField fx:id="txtdpi" layoutX="29.0" layoutY="340.0" />
+      <Label layoutX="33.0" layoutY="312.0" text="DPI" />
+      <Label layoutX="191.0" layoutY="312.0" text="NOMBRE" />
+      <Label layoutX="374.0" layoutY="312.0" text="NIT" />
+      <TextField fx:id="txtnit" layoutX="374.0" layoutY="340.0" />
+      <Label layoutX="25.0" layoutY="379.0" text="DIRECCION" />
+      <TextField fx:id="txtdireccion" layoutX="25.0" layoutY="404.0" />
+      <Label layoutX="200.0" layoutY="379.0" text="TELEFONO" />
+      <TextField fx:id="txttel" layoutX="200.0" layoutY="404.0" />
+      <Button fx:id="btncargar" layoutX="589.0" layoutY="336.0" mnemonicParsing="false" onAction="#cargar" prefHeight="34.0" prefWidth="86.0" text="Cargar" />
+      <TextField fx:id="txtestado" layoutX="403.0" layoutY="404.0" />
+      <Label layoutX="403.0" layoutY="379.0" text="Estado" />
+      <Button fx:id="btnmodificar" layoutX="589.0" layoutY="387.0" mnemonicParsing="false" onAction="#modificar" prefHeight="34.0" prefWidth="86.0" text="Modificar" />
+      <Button fx:id="btneliminar" layoutX="589.0" layoutY="450.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="34.0" prefWidth="86.0" text="Eliminar" />
+      <Label layoutX="43.0" layoutY="442.0" text="Contacto" />
+      <TextField fx:id="txtcontanto" layoutX="43.0" layoutY="467.0" />
+      <Label layoutX="229.0" layoutY="442.0" text="Descuento" />
+      <TextField fx:id="txtdesc" layoutX="229.0" layoutY="467.0" />
+   </children>
+</AnchorPane>

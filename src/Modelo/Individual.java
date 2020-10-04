@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
 import Controlador.Utilerias;
@@ -17,8 +13,8 @@ public class Individual extends Cliente {
     public Individual (){
     }
     
-    public Individual(String dpi, String nombre, String nit, String direccion, String telefono) {
-        super(nombre, nit, direccion, telefono);
+    public Individual(String dpi, String nombre, String nit, String direccion, String telefono, String estado) {
+        super(nombre, nit, direccion, telefono, estado);
         this.dpi = dpi;
     }
     
@@ -34,8 +30,8 @@ public class Individual extends Cliente {
    Utilerias util=new Utilerias();
  
     @Override
-    public String toString(Object obj) {
-        return "["+ util.getNombreClase(obj) +"]{" + "id=" + getId() + ", nombre=" + getNombre() + "DPI =" + getDpi() + ", nit=" + getNit() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + '}';
+    public String toString() {
+        return "["+ util.getNombreClase(this) +"]" + "id=" + getId() + ", nombre=" + getNombre() + "DPI =" + getDpi() + ", nit=" + getNit() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + ", Estado=" + getEstado();
       }  
     
 }

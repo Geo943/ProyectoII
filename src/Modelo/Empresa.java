@@ -15,8 +15,11 @@ public class Empresa extends Cliente {
     private String contacto;
     private int descuento;
 
-    public Empresa(String contacto, int descuento, String nombre, String nit, String direccion, String telefono) {
-        super(nombre, nit, direccion, telefono);
+    public Empresa() {
+    }
+
+    public Empresa(String contacto, int descuento, String nombre, String nit, String direccion, String telefono, String estado) {
+        super(nombre, nit, direccion, telefono,estado);
         this.contacto = contacto;
         this.descuento = descuento;
     }
@@ -37,11 +40,12 @@ public class Empresa extends Cliente {
         this.contacto = contacto;
     }
     
-    Utilerias util=new Utilerias();
+   
  
     @Override
-    public String toString(Object obj) {
-        return "["+ util.getNombreClase(obj) +"]{" + "id =" + getId() + ", nombre =" + getNombre() + ", nit =" + getNit() + ", direccion =" + getDireccion() + ", telefono =" + getTelefono() + "Contacto =" + getContacto()+ "Descuento =" + getDescuento()+'}';
+    public String toString() {
+         Utilerias util=new Utilerias();
+        return "["+ util.getNombreClase(this) +"]" + "id =" + getId() + ", nombre =" + getNombre() + ", nit =" + getNit() + ", direccion =" + getDireccion() + ", telefono =" + getTelefono() + "Contacto =" + getContacto()+ "Descuento =" + getDescuento() + "Estado =" + getEstado();
       }  
     
 }

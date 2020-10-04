@@ -13,18 +13,20 @@ public class Producto {
     private String modelov;
     private int cantidad;
     private double precio;
+    private String estado;
 
     public Producto() {
-        this.id=sigIdproducto;
+        this.id=sigIdproducto++;
     }
 
-    public Producto(int id, String nombre, String marcav, String modelov, int cantidad, double precio) {
-        this.id ++;
+    public Producto( String nombre, String marcav, String modelov, int cantidad, double precio,String estado) {
+        this();
         this.nombre = nombre;
         this.marcav = marcav;
         this.modelov = modelov;
         this.cantidad = cantidad;
         this.precio= precio;
+        this.estado=estado;
     }
     
 
@@ -80,10 +82,19 @@ public class Producto {
         this.precio = precio;
     }
     
-
+    
+//no se solisito que fuera medante la clase Utileria el nombre de la clase
     @Override
     public String toString() {
-        return "["+nombre()+"]" + "id=" + getId() + ", nombre=" + getNombre() + ", marcav=" + getMarcav() + ", modelov=" + getModelov() + ", cantidad=" + getCantidad() + ", Precio="+ getPrecio();
+        return "["+nombre()+"]" + "id=" + getId() + ", nombre=" + getNombre() + ", marcav=" + getMarcav() + ", modelov=" + getModelov() + ", cantidad=" + getCantidad() + ", Precio="+ getPrecio()+ ", estado=" + getEstado();
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     

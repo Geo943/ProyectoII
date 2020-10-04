@@ -10,25 +10,26 @@ import Controlador.Utilerias;
 public class Cliente {
 
     private int id;
-    private static int sigIdcliente;
+    private static int sigIdcliente=1;
     public String nombre;
     private String nit;
     private String direccion;
     private String telefono;
+    private String estado;
     
 //aumenta su valor 
     public Cliente() {
-        this.id=1; //inicializo
+        this.id=sigIdcliente++; //inicializo
     }
 
-    public Cliente(String nombre, String nit,String direccion, String telefono) { 
+    public Cliente(String nombre, String nit,String direccion, String telefono, String estado) { 
         //reutilizacion de constructor
-        
-        this.id=sigIdcliente++; //le asigno a la var static el incremento de id
+        this(); //le asigno a la var static el incremento de id
         this.nombre = nombre;
         this.nit = nit;
         this.direccion=direccion;
         this.telefono = telefono;
+        this.estado=estado;
     }
 
     public int getId() {
@@ -73,10 +74,20 @@ public class Cliente {
         this.direccion = direccion;
     }
     
-    Utilerias util=new Utilerias();
+    
  
-    public String toString(Object obj) {
-        return "["+ util.getNombreClase(obj) +"]{" + "id=" + getId() + ", nombre=" + getNombre() + ", nit=" + getNit() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + '}';
+    @Override
+    public String toString() {
+        Utilerias util=new Utilerias();
+        return "["+ util.getNombreClase(this) +"]" + "id=" + getId() + ", nombre=" + getNombre() + ", nit=" + getNit() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + ", Estado =" + getEstado();
       }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
     
 }
