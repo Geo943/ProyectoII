@@ -41,5 +41,7 @@
       <TextField fx:id="txtcontanto" layoutX="43.0" layoutY="467.0" />
       <Label layoutX="229.0" layoutY="442.0" text="Descuento" />
       <TextField fx:id="txtdesc" layoutX="229.0" layoutY="467.0" />
+      <Label layoutX="421.0" layoutY="442.0" prefHeight="17.0" prefWidth="133.0" text="FILTRAR POR ESTADO" />
+      <TextField fx:id="txtfiltro" layoutX="421.0" layoutY="467.0" onKeyReleased="#filtrar" />
    </children>
 </AnchorPane>

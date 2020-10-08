@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -40,6 +41,7 @@ public class VistaproductoController implements Initializable {
     private TableColumn colprecio;
 
     private ObservableList<Producto> productos;
+    private ObservableList<Producto> productosfil;
     @FXML
     private TableColumn colestado;
     @FXML
@@ -60,6 +62,8 @@ public class VistaproductoController implements Initializable {
     private Button btnmod;
     @FXML
     private Button btnelim;
+    @FXML
+    private TextField txtfiltro;
 
     /**
      * Initializes the controller class.
@@ -68,6 +72,7 @@ public class VistaproductoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         DataSistema pr = new DataSistema();
         productos = FXCollections.observableArrayList();
+        productosfil = FXCollections.observableArrayList();
         this.colid.setCellValueFactory(new PropertyValueFactory("id"));
         this.colnombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colmarca.setCellValueFactory(new PropertyValueFactory("marcav"));
@@ -154,6 +159,23 @@ public class VistaproductoController implements Initializable {
         this.txtprecio.setText(prrd.getPrecio() + "");
         this.txtestado.setText(prrd.getEstado());
 
+    }
+
+    @FXML
+    private void filtro(KeyEvent event) {
+           String filtro=this.txtfiltro.getText();
+        if(filtro.isEmpty()){
+            this.tblproducto.setItems(productos);
+        }else {
+        this.productosfil.clear();
+        for(Producto c:this.productos){
+            if(c.getEstado().toLowerCase().contains(filtro.toLowerCase())){
+                this.productosfil.add(c);
+              }
+            }
+        this.tblproducto.setItems(productosfil);
+        }
+        
     }
 
 }

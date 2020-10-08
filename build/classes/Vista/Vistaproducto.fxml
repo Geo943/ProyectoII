@@ -6,9 +6,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="431.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VistaproductoController">
+<AnchorPane id="AnchorPane" prefHeight="431.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VistaproductoController">
    <children>
-      <TableView fx:id="tblproducto" layoutX="14.0" layoutY="14.0" onMouseClicked="#selecion" prefHeight="200.0" prefWidth="562.0">
+      <TableView fx:id="tblproducto" layoutX="14.0" layoutY="14.0" onMouseClicked="#selecion" prefHeight="208.0" prefWidth="580.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="53.0" text="ID" />
           <TableColumn fx:id="colnombre" prefWidth="140.0" text="NOMBRE" />
@@ -34,5 +34,7 @@
       <Button fx:id="btnagregar" layoutX="346.0" layoutY="322.0" mnemonicParsing="false" onAction="#agregar" text="AGREGAR" />
       <Button fx:id="btnmod" layoutX="449.0" layoutY="322.0" mnemonicParsing="false" onAction="#modificar" text="MODFICAR" />
       <Button fx:id="btnelim" layoutX="413.0" layoutY="367.0" mnemonicParsing="false" onAction="#eliminar" text="ELIMINAR" />
+      <Label layoutX="32.0" layoutY="356.0" text="FILTRAR" />
+      <TextField fx:id="txtfiltro" layoutX="32.0" layoutY="379.0" onKeyReleased="#filtro" />
    </children>
 </AnchorPane>

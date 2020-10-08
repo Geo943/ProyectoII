@@ -28,8 +28,8 @@ public class Producto {
         this.precio= precio;
         this.estado=estado;
     }
-    
 
+    
     public int getCantidad() {
         return cantidad;
     }

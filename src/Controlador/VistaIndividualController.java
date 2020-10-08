@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
 import Modelo.Cliente;
@@ -18,10 +14,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -45,6 +43,7 @@ public class VistaIndividualController implements Initializable {
     private TableColumn coltelefono;
 
     private ObservableList<Cliente> individual;
+    private ObservableList<Cliente> individualfiltrado;
     @FXML
     private TableColumn colid;
     @FXML
@@ -75,6 +74,10 @@ public class VistaIndividualController implements Initializable {
     private TextField txtcontanto;
     @FXML
     private TextField txtdesc;
+    @FXML
+    private TextField txtfiltro;
+    
+    
 
     /**
      * Initializes the controller class.
@@ -84,6 +87,7 @@ public class VistaIndividualController implements Initializable {
         DataSistema dats = new DataSistema();
 
         individual = FXCollections.observableArrayList();
+        individualfiltrado = FXCollections.observableArrayList();
         this.colid.setCellValueFactory(new PropertyValueFactory("id"));
         this.coldpi.setCellValueFactory(new PropertyValueFactory("dpi"));
         this.colnombre.setCellValueFactory(new PropertyValueFactory("nombre"));
@@ -184,6 +188,23 @@ public class VistaIndividualController implements Initializable {
         Cliente ind = this.tblindividual.getSelectionModel().getSelectedItem();
         this.individual.remove(ind);
         this.tblindividual.refresh();
+    }
+
+    @FXML
+    private void filtrar(KeyEvent event) {
+        String filtro=this.txtfiltro.getText();
+        if(filtro.isEmpty()){
+            this.tblindividual.setItems(individual);
+        }else {
+        this.individualfiltrado.clear();
+        for(Cliente c:this.individual){
+            if(c.getEstado().toLowerCase().contains(filtro.toLowerCase())){
+                this.individualfiltrado.add(c);
+              }
+            }
+        this.tblindividual.setItems(individualfiltrado);
+        }
+        
     }
 
 }
