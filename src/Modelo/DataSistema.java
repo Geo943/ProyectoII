@@ -14,6 +14,7 @@ public class DataSistema {
     public static ArrayList<Cliente> list = new ArrayList<Cliente>(100);
     public static ArrayList<Producto> listpro = new ArrayList<Producto>(100);
     public static ArrayList<Orden> lisorden = new ArrayList<Orden>(100);
+    public static ArrayList<ItemOrden> lisItorden = new ArrayList<ItemOrden>(100);
 
     Cliente c1 = new Individual("231967380101", "Pedro gomez", "58476", "zona 1", "58962102", "Alta");
     Cliente c2 = new Individual("266544370101", "rut Perez", "38569", "zona 5", "44855622", "Alta");
@@ -33,6 +34,7 @@ public class DataSistema {
     Producto p7 = new Producto("Candelas", "Toyota", "2008", 1, 1200, "Alta");
     Producto p8 = new Producto("Bobina", "Mazda", "2003", 1, 700, "Alta");
     //-----------------------------------------------------------------------------------------------
+
     ItemOrden io1 = new ItemOrden(1, p1);
     ItemOrden io2 = new ItemOrden(1, p2);
     ItemOrden io3 = new ItemOrden(1, p3);
@@ -40,15 +42,18 @@ public class DataSistema {
     ItemOrden io5 = new ItemOrden(1, p5);
     ItemOrden io6 = new ItemOrden(1, p6);
     ItemOrden io7 = new ItemOrden(1, p6);
+    ItemOrden io8 = new ItemOrden(1, p7);
+
     //-----------------------------------------------------------------------------------------------
-    Orden o1 = new Orden(c1, io1, io2, 100, io1.getTotal(), "Express", "activo", 2);
-    Orden o2 = new Orden(c2, io2, io3, 120, io2.getTotal(), "Express", "activo", 3);
-    Orden o3 = new Orden(c3, io4, io5, 130, io4.getTotal(), "Express", "activo", 1);
-    Orden o4 = new Orden(c4, io6, io7, 150, io6.getTotal(), "Express", "activo", 3);
-    Orden o5 = new Orden(c5, io1, io2, 100, io1.getTotal(), "Express", "activo", 2);
-    Orden o6 = new Orden(c6, io3, io4, 90, io3.getTotal(), "Express", "activo", 1);
-    Orden o7 = new Orden(c7, io5, io6, 90, io5.getTotal(), "Express", "activo", 3);
-    Orden o8 = new Orden(c8, io7, io2, 100, io7.getTotal(), "Express", "activo", 1);
+    Orden or = new Orden();
+    Orden o1 = new Orden(c1, or.getFechaOrden(), 100, "ACTIVO", 3, "EXPRES");
+//    Orden o2 = new Orden(c2, or.getFechaOrden(), 100, "ACTIVO", 2, "EXPRES");
+//    Orden o3 = new Orden(c3, or.getFechaOrden(), 100, "ACTIVO", 3, "EXPRES");
+//    Orden o4 = new Orden(c4, or.getFechaOrden(), 100, "ACTIVO", 1, "EXPRES");
+//    Orden o5 = new Orden(c5, or.getFechaOrden(), 100, "ACTIVO", 2, "EXPRES");
+//    Orden o6 = new Orden(c6, or.getFechaOrden(), 100, "ACTIVO", 1, "EXPRES");
+//    Orden o7 = new Orden(c7, or.getFechaOrden(), 100, "ACTIVO", 1, "EXPRES");
+//    Orden o8 = new Orden(c8, or.getFechaOrden(), 100, "ACTIVO",4,"EXPRES");
 
     public void llenarCliente() {
         list.add(0, c1);
@@ -88,15 +93,27 @@ public class DataSistema {
         return listpro;
     }
 
+    public void llenarItorden() {
+        lisItorden.add(io1);
+        lisItorden.add(io2);
+        lisItorden.add(io3);
+        lisItorden.add(io4);
+        lisItorden.add(io5);
+        lisItorden.add(io6);
+        lisItorden.add(io7);
+        lisItorden.add(io8);
+
+    }
+
     public void llenarorden() {
         lisorden.add(o1);
-        lisorden.add(o2);
-        lisorden.add(o3);
-        lisorden.add(o4);
-        lisorden.add(o5);
-        lisorden.add(o6);
-        lisorden.add(o7);
-        lisorden.add(o8);
+//         lisorden.add(o2);
+//        lisorden.add(o3);
+//        lisorden.add(o4);
+//        lisorden.add(o5);
+//        lisorden.add(o6);
+//        lisorden.add(o7);
+//        lisorden.add(o8);
 
     }
 

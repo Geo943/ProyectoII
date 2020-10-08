@@ -6,39 +6,43 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.OrdenController">
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.OrdenController">
    <children>
-      <TableView fx:id="tblorden" layoutX="6.0" layoutY="8.0" prefHeight="200.0" prefWidth="839.0">
+      <Label layoutX="35.0" layoutY="360.0" text="CLIENTE" />
+      <TextField fx:id="txtcliente" layoutX="35.0" layoutY="389.0" />
+      <TextField fx:id="txtfecha" layoutX="233.0" layoutY="391.0" />
+      <Label layoutX="233.0" layoutY="362.0" text="FECHA" />
+      <TextField fx:id="txtpreenvio" layoutX="446.0" layoutY="459.0" />
+      <Label layoutX="446.0" layoutY="430.0" text="PRECIO DE ENVIO" />
+      <TextField fx:id="txttdeenvio" layoutX="41.0" layoutY="455.0" />
+      <Label layoutX="41.0" layoutY="426.0" text="TIPO DE ENVIO" />
+      <TextField fx:id="txtestado" layoutX="242.0" layoutY="457.0" />
+      <Label layoutX="242.0" layoutY="428.0" text="ESTADO" />
+      <TextField fx:id="txtdiasenvi" layoutX="438.0" layoutY="393.0" />
+      <Label layoutX="438.0" layoutY="364.0" text="DIAS DE ENVIO" />
+      <TableView fx:id="tblorden" layoutX="82.0" layoutY="35.0" prefHeight="78.0" prefWidth="546.0">
         <columns>
-          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colcliente" prefWidth="75.0" text="CLIENTE" />
-            <TableColumn fx:id="colitem1" prefWidth="110.0" text="ITEMORDEN1" />
-            <TableColumn fx:id="colitem2" prefWidth="93.0" text="ITEMORDEN2" />
-            <TableColumn fx:id="colfecha" prefWidth="63.0" text="FECHA" />
-            <TableColumn fx:id="colprecioenv" text="PRECIOENVI" />
-            <TableColumn fx:id="coltotal" prefWidth="81.0" text="TOTAL" />
-            <TableColumn fx:id="coltipenvio" prefWidth="92.0" text="TIPO ENVIO" />
-            <TableColumn fx:id="colestado" prefWidth="73.0" text="ESTADO" />
-            <TableColumn fx:id="coldiasenvi" prefWidth="96.0" text="DIAS DE ENVIO" />
+          <TableColumn fx:id="colcliente" prefWidth="98.0" text="CLIENTE" />
+          <TableColumn fx:id="colfecha" prefWidth="95.0" text="FECHA" />
+            <TableColumn fx:id="coldiasenvi" prefWidth="76.0" text="DENVIO" />
+            <TableColumn fx:id="coltipenvio" prefWidth="76.0" text="TENVIO" />
+            <TableColumn fx:id="colestado" prefWidth="70.0" text="ESTADO" />
+            <TableColumn fx:id="colprecioenv" prefWidth="124.0" text="PRECIO ENVIO" />
         </columns>
       </TableView>
-      <Button layoutX="795.0" layoutY="251.0" mnemonicParsing="false" text="CARGAR" />
-      <Label layoutX="28.0" layoutY="220.0" text="CLIENTE" />
-      <TextField layoutX="28.0" layoutY="249.0" />
-      <TextField layoutX="213.0" layoutY="251.0" />
-      <Label layoutX="213.0" layoutY="222.0" text="ITEM1" />
-      <TextField layoutX="401.0" layoutY="251.0" />
-      <Label layoutX="401.0" layoutY="222.0" text="ITEM2" />
-      <TextField layoutX="597.0" layoutY="253.0" />
-      <Label layoutX="597.0" layoutY="224.0" text="FECHA" />
-      <TextField layoutX="21.0" layoutY="322.0" />
-      <Label layoutX="21.0" layoutY="293.0" text="PRECO DE ENVIO" />
-      <TextField layoutX="213.0" layoutY="324.0" />
-      <Label layoutX="213.0" layoutY="295.0" text="TIPO DE ENIO" />
-      <TextField layoutX="408.0" layoutY="324.0" />
-      <Label layoutX="408.0" layoutY="295.0" text="ESTADO" />
-      <TextField layoutX="597.0" layoutY="324.0" />
-      <Label layoutX="597.0" layoutY="295.0" text="DIAS DE ENVIO" />
-      <Button layoutX="795.0" layoutY="310.0" mnemonicParsing="false" text="CANCELAR " />
+      <TableView fx:id="tblitemord" layoutX="57.0" layoutY="139.0" prefHeight="200.0" prefWidth="614.0">
+        <columns>
+          <TableColumn fx:id="colnolinea" prefWidth="75.0" text="NO LINEA" />
+          <TableColumn fx:id="colcantidad" prefWidth="75.0" text="CANTIDAD" />
+            <TableColumn fx:id="colprecio" prefWidth="95.0" text="PRECIO" />
+            <TableColumn fx:id="descripcion" prefWidth="195.0" text="DESCRIPCION PROD" />
+            <TableColumn fx:id="coltotal" prefWidth="195.0" text="TOTAL" />
+        </columns>
+      </TableView>
+      <Label layoutX="39.0" layoutY="491.0" text="cantidad" />
+      <TextField fx:id="txtcatidad" layoutX="39.0" layoutY="520.0" />
+      <Button fx:id="btncarga" layoutX="542.0" layoutY="508.0" mnemonicParsing="false" onAction="#cargar" text="cargar" />
+      <ComboBox fx:id="tbncombopro" layoutX="211.0" layoutY="520.0" onAction="#cpmbopro" prefWidth="150.0" />
+      <Label layoutX="210.0" layoutY="491.0" text="cantidad" />
    </children>
 </AnchorPane>

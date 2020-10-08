@@ -6,19 +6,27 @@
 package Controlador;
 
 import Modelo.Cliente;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  *
  * @author geoffrey
  */
-public class Utilerias {   
-        
-  
-        public String getNombreClase(Object obj) {  
-     
+public class Utilerias {
+
+    public String getNombreClase(Object obj) {
+
         return obj.getClass().getSimpleName();
- 
+
     }
-   
+    //para  formato de moneda
+
+    public NumberFormat formatmoneda(String cantidad) {
+        NumberFormat nf = NumberFormat.getInstance(Locale.US);
+        nf.format(cantidad);
+        return nf;
+
+    }
 
 }

@@ -29,8 +29,16 @@ public class Individual extends Cliente {
   
    Utilerias util=new Utilerias();
  
+   
+    
+   
     @Override
-    public String toString() {
+   public String toString() {
+   return getNombre();
+   }
+    
+    
+    public String toString(String a) {
         return "["+ util.getNombreClase(this) +"]" + "id=" + getId() + ", nombre=" + getNombre() + "DPI =" + getDpi() + ", nit=" + getNit() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + ", Estado=" + getEstado();
       }  
     

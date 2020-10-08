@@ -81,13 +81,18 @@ public class Producto {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "nombre=" + nombre + ", marcav=" + marcav + ", modelov=" + modelov + '}';
+    }
     
     
 //no se solisito que fuera medante la clase Utileria el nombre de la clase
-    @Override
-    public String toString() {
-        return "["+nombre()+"]" + "id=" + getId() + ", nombre=" + getNombre() + ", marcav=" + getMarcav() + ", modelov=" + getModelov() + ", cantidad=" + getCantidad() + ", Precio="+ getPrecio()+ ", estado=" + getEstado();
-    }
+//    @Override
+//    public String toString() {
+//        return "["+nombre()+"]" + "id=" + getId() + ", nombre=" + getNombre() + ", marcav=" + getMarcav() + ", modelov=" + getModelov() + ", cantidad=" + getCantidad() + ", Precio="+ getPrecio()+ ", estado=" + getEstado();
+//    }
 
     public String getEstado() {
         return estado;
